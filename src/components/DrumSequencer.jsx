@@ -116,7 +116,7 @@ export default function DrumSequencer() {
             type="range"
             className="custom-range"
             min="1"
-            max="4"
+            max="5"
             onClick={(event) => setSlider4val(event.target.value)}
           />
         </div>
@@ -126,8 +126,8 @@ export default function DrumSequencer() {
           <input
             type="range"
             className="custom-range"
-            min="1"
-            max="4"
+            min="0"
+            max="5"
             onClick={(event) => setSlider5val(event.target.value)}
           />
         </div>
