@@ -9,11 +9,7 @@ export default function DrumSequencer() {
   const [rangeval, setRangeval] = useState(null);
 
   let setup = (p5, canvasParentRef) => {
-    // slider = p5.createSlider(60, 240, 100);
-
-    // slider.position(10, 10);
-    // slider.style("width", "160px");
-
+    
     let canvas = p5
       .createCanvas(p5.windowWidth, p5.windowHeight)
       .parent(canvasParentRef);
@@ -74,7 +70,7 @@ export default function DrumSequencer() {
           className="custom-range"
           min="-60"
           max="-15"
-          onChange={(event) => setRangeval(event.target.value)}
+          onClick={(event) => setRangeval(event.target.value)}
         />
         <h4>The range value is {rangeval}</h4>
       </div>
