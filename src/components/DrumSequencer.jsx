@@ -7,12 +7,7 @@ export default function DrumSequencer() {
   const [slider1val, setSlider1val] = useState(null);
   const [slider2val, setSlider2val] = useState(null);
   const [slider3val, setSlider3val] = useState(2);
-  const [slider4val, setSlider4val] = useState(1);
-  const [slider5val, setSlider5val] = useState(null);
 
-  const [drumState, setDrumState] = useState(false);
-
-  
 
   let setup = (p5, canvasParentRef) => {
     let canvas = p5
