@@ -28,8 +28,6 @@ export default function DrumSequencer() {
 
   let kickBaseURL = "sounds/";
 
-
-
   const kick = new Tone.Players({
     kick1: kickBaseURL + "kick1.mp3",
     kick2: kickBaseURL + "kick2.mp3",
@@ -38,8 +36,6 @@ export default function DrumSequencer() {
   }).toDestination();
 
   let draw = (p5) => {};
-
-
 
   let drumLoopA;
 
@@ -57,7 +53,6 @@ export default function DrumSequencer() {
   };
 
  
-
   drumLoopA = new Tone.Loop(kickPlayer, rythmDiv[slider2val]);
 
   function kickPlayer(time) {
