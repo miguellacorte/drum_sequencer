@@ -12,7 +12,7 @@ export default function DrumSequencer() {
 
   const [drumState, setDrumState] = useState(false);
 
-  // const [buttonval, setButtonval] = useState(false);
+  
 
   let setup = (p5, canvasParentRef) => {
     let canvas = p5
@@ -33,7 +33,7 @@ export default function DrumSequencer() {
 
   let kickBaseURL = "sounds/";
 
-  // const player1 = new Tone.Player("sounds/kick1.mp3").toDestination();
+
 
   const kick = new Tone.Players({
     kick1: kickBaseURL + "kick1.mp3",
@@ -42,36 +42,11 @@ export default function DrumSequencer() {
     kick4: kickBaseURL + "kick4.mp3",
   }).toDestination();
 
-  const snarePlayer = new Tone.Players({
-    snare1: kickBaseURL + "snare1.mp3",
-    snare2: kickBaseURL + "snare2.mp3",
-    snare3: kickBaseURL + "snare3.mp3",
-    snare4: kickBaseURL + "snare4.mp3",
-    snare5: kickBaseURL + "snare5.mp3",
-  }).toDestination();
-
-  // const player = new Tone.Player({
-  //   url: "https://tonejs.github.io/audio/loop/FWDL.mp3",
-  //   loop: true,
-  //   playbackRate : Tone.Time(rythmDiv[slider2val]).toSeconds() ,
-  // }).toDestination();
-
   let draw = (p5) => {};
 
-  // useEffect( () => {
-  //   player.dispose()
 
-  // }, [player])
 
   let drumLoopA;
-
-  // I want drumLoopA to sttart at 0, if its value changes, then stop
-
-  // const drumLoopB = new Tone.Loop((time) => {
-  //   Tone.loaded().then(() => {
-  //     snarePlayer.player(`snare${slider4val}`).start(time);
-  //   });
-  // }, rythmDiv[slider5val]).start(0);
 
   Tone.Destination.volume.value = slider1val;
 
@@ -79,21 +54,14 @@ export default function DrumSequencer() {
     console.log("play");
     Tone.start();
     Tone.Transport.start();
-
-    
     drumLoopA.start();
-
-  
   };
 
   const stopDrumLoop = () => {
     drumLoopA.cancel();
-    
   };
 
-  useEffect( () => {
-    
-  }, [slider3val])
+ 
 
   drumLoopA = new Tone.Loop(kickPlayer, rythmDiv[slider2val]);
 
@@ -149,26 +117,7 @@ export default function DrumSequencer() {
             onClick={(event) => setSlider3val(event.target.value)}
           />
         </div>
-        {/* <div>
-          <h4>Snare select: {slider4val}</h4>
-          <input
-            type="range"
-            className="custom-range"
-            min="1"
-            max="5"
-            onClick={(event) => setSlider4val(event.target.value)}
-          />
-        </div>
-        <div>
-          <h4>Snare rythm division select: {slider5val}</h4>
-          <input
-            type="range"
-            className="custom-range"
-            min="0"
-            max="5"
-            onClick={(event) => setSlider5val(event.target.value)}
-          />
-        </div> */}
+       
       </div>
 
       <div>
